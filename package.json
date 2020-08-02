@@ -1,0 +1,23 @@
+{
+  "name": "ufret-default-key-selector",
+  "version": "0.0.1",
+  "description": "U-Fret default key selector",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "makoto.uwaya@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "0.0.98"
+  },
+  "main": "src/selectedZero.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakotoUwaya/ufret-chrome-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MakotoUwaya/ufret-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/MakotoUwaya/ufret-chrome-extension/#readme"
+}
