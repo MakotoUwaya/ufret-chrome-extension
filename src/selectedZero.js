@@ -46,10 +46,10 @@ function main() {
   }
 
   // Remove ads
-  const ads = Array.from(document.querySelectorAll("[id^='criteo_slot_']"));
-  const ioc = Array.from(document.getElementsByClassName('inst_overlap_cover'));
+  const mainAds = Array.from(document.querySelectorAll("[id^='google_ads_']"));
+  const bottomAds = Array.from(document.getElementsByClassName('adsbygoogle'));
   const gap = Array.from(document.getElementsByClassName('google-auto-placed'));
-  for (const ad of ads.concat(ioc).concat(gap)) {
+  for (const ad of mainAds.concat(bottomAds).concat(gap)) {
     ad.hidden = true;
   }
 
