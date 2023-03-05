@@ -2,9 +2,11 @@ import { ReactElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { Store } from '@eduardoac-skimlinks/webext-redux';
+import { getBucket } from '@extend-chrome/storage';
 import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
 
 import { proxyStore as store } from '../app/proxyStore';
+import type { MySettings } from '../shared/types/setting';
 
 import Content from './Content';
 
@@ -16,13 +18,15 @@ const withProxyStore = async (children: ReactElement, proxyStore: Store): Promis
       </Provider>
     );
   });
-}
+};
 
 withProxyStore(<Content />, store).then((component) => {
   const container = document.createElement('my-extension-root');
   document.body.append(container);
   createRoot(container).render(component);
 });
+
+const bucket = getBucket<MySettings>('my_ufret_settings', 'sync');
 
 const main = (): void => {
   // Remove mask ads
@@ -70,8 +74,12 @@ const main = (): void => {
     ...overlayAds,
     ...googleAds,
     ...gap,
-    document.querySelector('body > div.container > div:nth-child(11) > div:nth-child(4) > div:nth-child(19)'),
-    document.querySelector('body > div.container > div:nth-child(11) > div:nth-child(4) > div:nth-child(25)'),
+    document.querySelector(
+      'body > div.container > div:nth-child(11) > div:nth-child(4) > div:nth-child(19)'
+    ),
+    document.querySelector(
+      'body > div.container > div:nth-child(11) > div:nth-child(4) > div:nth-child(25)'
+    ),
     document.getElementById('showAdPosition'),
   ];
   for (const ads of allAds) {
@@ -83,14 +91,18 @@ const main = (): void => {
   if (!keyselect) {
     return;
   }
-  keyselect.value = 0;
-  const event = new Event('change');
-  keyselect.dispatchEvent(event);
+  bucket.get().then((settings) => {
+    keyselect.value = (
+      settings.selectedScoreKey > 0 ? `+${settings.selectedScoreKey}` : settings.selectedScoreKey
+    ).toString();
+    const event = new Event('change');
+    keyselect.dispatchEvent(event);
 
-  // Start play
-  var chord = document.getElementById('my-chord-data');
-  chord?.click();
-  keyselect.scrollIntoView();
-}
+    // Start play
+    var chord = document.getElementById('my-chord-data');
+    chord?.click();
+    keyselect.scrollIntoView();
+  });
+};
 
 main();
