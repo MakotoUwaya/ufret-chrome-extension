@@ -8,7 +8,7 @@ it('should load and display Popup', async () => {
 
   expect(
     screen.getByText((content, element) => {
-      return element !== null && element.tagName.toLowerCase() === 'h1' && content === 'Popup';
+      return element !== null && element.tagName.toLowerCase() === 'h1' && content === 'Settings';
     })
   ).toBeInTheDocument();
 });
