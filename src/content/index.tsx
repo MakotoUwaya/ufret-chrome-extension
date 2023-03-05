@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { Store } from '@eduardoac-skimlinks/webext-redux';
-import CssBaseline from '@mui/material/CssBaseline';
+import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
 
 import { proxyStore as store } from '../app/proxyStore';
 
@@ -18,8 +18,7 @@ async function withProxyStore(children: ReactElement, proxyStore: Store): Promis
   return proxyStore.ready().then(() => {
     return (
       <Provider store={proxyStore}>
-        <CssBaseline />
-        {children}
+        <ScopedCssBaseline>{children}</ScopedCssBaseline>
       </Provider>
     );
   });
