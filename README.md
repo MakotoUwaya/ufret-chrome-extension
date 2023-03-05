@@ -9,7 +9,7 @@
   </h2>
 </div>
 
-<p align="center">A cross-platform (Chrome, Firefox, Edge, Opera, Brave) web browser extension (Manifest V3 and Manifest V2) starter kit with hot reload support, built with React, Typescript, Redux, Vite, ESLint, Prettier, TailwindCSS, Jest and more! </p>
+<p align="center">A cross-platform (Chrome, Firefox, Edge, Opera, Brave) web browser extension (Manifest V3 and Manifest V2) starter kit with hot reload support, built with React, Typescript, Redux, Vite, ESLint, Prettier, Jest and more! </p>
 <hr />
 
 <div align="center" >
@@ -52,7 +52,6 @@
 - React
 - TypeScript
 - Redux (toolkit and redux-persist)
-- TailwindCSS
 - Vite
 - Jest
 - ESLint
