@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { Store } from '@eduardoac-skimlinks/webext-redux';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import { proxyStore as store } from '../app/proxyStore';
 
@@ -15,6 +16,11 @@ withProxyStore(<Content />, store).then((component) => {
 
 async function withProxyStore(children: ReactElement, proxyStore: Store): Promise<ReactElement> {
   return proxyStore.ready().then(() => {
-    return <Provider store={proxyStore}>{children}</Provider>;
+    return (
+      <Provider store={proxyStore}>
+        <CssBaseline />
+        {children}
+      </Provider>
+    );
   });
 }
