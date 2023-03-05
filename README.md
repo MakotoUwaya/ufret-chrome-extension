@@ -29,7 +29,6 @@
 - Manifest V2 support (beta)
 - Dynamic manifest.json
 - Includes ESLint configured to work with TypeScript and Prettier
-- Includes stylelint and commitlint configured
 - Includes tests with Jest
 
 #### Built with
@@ -42,7 +41,6 @@
 - Jest
 - ESLint
 - Prettier
-- stylelint
 - commitlint
 - commitizen
 - simple-git-hooks (lightweight husky alternative)
@@ -109,8 +107,8 @@ Then run the following:
 
 - `yarn clean` to remove dist folder. `dev` and `build` commands call this command.
 - `yarn ci:test` to run lint & unit test & type checking in ci environment. `ci:test:lint`, `ci:test:style`, `ci:test:unit` commands also available.
-- `yarn format` to fix code with eslint, prettier and stylelint.
-- `yarn lint` to call ESLint, Prettier and stylelint.
+- `yarn format` to fix code with eslint, prettier.
+- `yarn lint` to call ESLint, Prettier.
 - `yarn test` for testing.
 
 ## Important Notes

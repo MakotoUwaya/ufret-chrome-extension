@@ -16,11 +16,9 @@
     "format": "run-p format:*",
     "format:eslint": "run-s \" lint:eslint --fix \"",
     "format:prettier": "run-s \" lint:prettier --write \"",
-    "format:stylelint": "run-s \" lint:stylelint --fix \"",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint . --ext .js,.ts,.tsx --max-warnings 0 --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.(md|json|yml)\" --ignore-path .gitignore --check",
-    "lint:stylelint": "stylelint \"**/*.css\" --ignore-path .gitignore",
     "test": "jest",
     "test:types": "tsc --noEmit",
     "prepare": "simple-git-hooks"
@@ -78,9 +76,6 @@
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
     "simple-git-hooks": "2.8.0",
-    "stylelint": "14.10.0",
-    "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-standard": "26.0.0",
     "ts-jest": "28.0.7",
     "typescript": "4.7.4",
     "vite": "2.9.14"
