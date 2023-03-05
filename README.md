@@ -1,3 +1,5 @@
+Thanks to [sinanbekar/browser-extension-react-typescript-starter](https://github.com/sinanbekar/browser-extension-react-typescript-starter) !
+
 <div align="center">
   <br>
  <img src="https://raw.githubusercontent.com/sinanbekar/browser-extension-react-typescript-starter/main/public/images/extension_128.png" alt="Browser Extension React & TypeScript Starter" width="128">
@@ -16,7 +18,6 @@
   <a href="#features">Features</a> ·
   <a href="#quick-start">Quick Start</a> ·
   <a href="#important-notes">Important Notes</a> ·
-  <a href="#license">License</a>
 </p>
 
 ## Features
