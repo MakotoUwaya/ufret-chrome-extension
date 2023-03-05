@@ -1,53 +1,30 @@
-Thanks to [sinanbekar/browser-extension-react-typescript-starter](https://github.com/sinanbekar/browser-extension-react-typescript-starter) !
+# U-Fret Browser Extension
 
 <div align="center">
   <br>
- <img src="https://raw.githubusercontent.com/sinanbekar/browser-extension-react-typescript-starter/main/public/images/extension_128.png" alt="Browser Extension React & TypeScript Starter" width="128">
+ <img src="https://raw.githubusercontent.com/MakotoUwaya/ufret-chrome-extension/main/public/images/icon128.png" alt="U-Fret Browser Extension" width="128">
   <br>
   <h2>
-    Browser Extension <br>
-    React & TypeScript Starter
+    U-Fret Browser Extension <br>
+    React & TypeScript
     <br>
   </h2>
 </div>
 
-<p align="center">A cross-platform (Chrome, Firefox, Edge, Opera, Brave) web browser extension (Manifest V3 and Manifest V2) starter kit with hot reload support, built with React, Typescript, Redux, Vite, ESLint, Prettier, Jest and more! </p>
+<p align="center">A cross-platform (Chrome, Firefox, Edge, Opera, Brave) web browser extension. </p>
 <hr />
 
 <p align="center">
   <a href="#features">Features</a> ·
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="#important-notes">Important Notes</a> ·
+  <a href="#browser-support">Browser Support</a> ·
+  <a href="#quick-start">Quick Start</a>
 </p>
 
 ## Features
 
-- **Instant HMR** (hot reload)[^1]
-- Write once run on any browser
-- Global Redux support with persist option. Effortless communication between content, background, popup, options, and more pages.
-- Provides a basic content example and popup, options, and welcome pages with all React
-- Latest Manifest V3 support
-- Manifest V2 support (beta)
-- Dynamic manifest.json
-- Includes ESLint configured to work with TypeScript and Prettier
-- Includes tests with Jest
-
-#### Built with
-
-- React
-- TypeScript
-- Redux (toolkit and redux-persist)
-- Material UI
-- Vite
-- Jest
-- ESLint
-- Prettier
-- commitlint
-- commitizen
-- simple-git-hooks (lightweight husky alternative)
-- nano-staged
-
-[^1]: While fully supported and stable in most cases, rarely hard reloading is recommended.
+- Remove Ad at each pages(as much as possible).
+- Select original key on a page of scores.
+- Scrolls automatically when you open a page of scores.
 
 ## Browser Support
 
@@ -57,33 +34,12 @@ Thanks to [sinanbekar/browser-extension-react-typescript-starter](https://github
 
 ## Quick Start
 
-> **Warning** **Please see [Important Notes](#important-notes) before start using.**
-
 Ensure you have
 
 - [Node.js](https://nodejs.org) v14 or later installed
-- [Yarn](https://yarnpkg.com) v1 installed
-  - avoid v4
-
-### Use the Template
-
-#### GitHub Template
-
-[Create a repo from this template on GitHub](https://github.com/sinanbekar/browser-extension-react-typescript-starter/generate).
-
-**_or_**
-
-#### Clone to local
-
-If you prefer to do it manually with the cleaner git history
-
-> **Note** If you don't have yarn installed, run: npm install -g yarn
-
-```bash
-npx degit sinanbekar/browser-extension-react-typescript-starter my-web-extension
-cd my-web-extension
-git init
-```
+  - Recommended v18.12.1
+- [Yarn](https://yarnpkg.com) installed
+  - Recommended v1.22.19
 
 Then run the following:
 
@@ -111,9 +67,3 @@ Then run the following:
 - `yarn format` to fix code with eslint, prettier.
 - `yarn lint` to call ESLint, Prettier.
 - `yarn test` for testing.
-
-## Important Notes
-
-This starter includes experimental packages and is currently in development. You can see changes in this repo often for now.
-
-Please use with caution.
