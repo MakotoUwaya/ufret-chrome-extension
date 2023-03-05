@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import Welcome from './Welcome';
+import '../style';
 
-import '../tailwind.css';
+import Welcome from './Welcome';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
