@@ -1,10 +1,18 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
+import Box from '@mui/material/Box';
 
 const Options = (): ReactElement => {
   return (
-    <div className="flex h-screen items-center justify-center">
+    <Box
+      sx={{
+        display: 'flex',
+        height: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <h1>Options</h1>
-    </div>
+    </Box>
   );
 };
 

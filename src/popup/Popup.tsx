@@ -1,12 +1,20 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
+import Box from '@mui/material/Box';
 
 const Popup = (): ReactElement => {
   document.body.style.width = '15rem';
   document.body.style.height = '15rem';
   return (
-    <div className="flex h-screen items-center justify-center">
+    <Box
+      sx={{
+        display: 'flex',
+        height: '100vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <h1>Popup</h1>
-    </div>
+    </Box>
   );
 };
 
