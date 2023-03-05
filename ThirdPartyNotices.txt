@@ -1,6 +1,17 @@
+NOTICES
+
+This repository incorporates material as listed below or described in the code.
+
+
+
+---------------------------------------------------------
+
+sinanbekar/browser-extension-react-typescript-starter 0.1.0 - MIT
+https://github.com/sinanbekar/browser-extension-react-typescript-starter
+
 MIT License
 
-Copyright (c) 2023 MakotoUwaya
+Copyright (c) 2022 Sinan Bekar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +30,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---------------------------------------------------------
