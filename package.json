@@ -79,7 +79,7 @@
     "simple-git-hooks": "2.8.0",
     "ts-jest": "28.0.7",
     "typescript": "4.7.4",
-    "vite": "3.2.11"
+    "vite": "4.5.14"
   },
   "config": {
     "commitizen": {
