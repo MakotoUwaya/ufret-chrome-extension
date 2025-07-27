@@ -108,6 +108,66 @@ src/
 }
 ```
 
+## コード品質管理
+
+### ESLint 設定 (`.eslintrc.json`)
+
+```json
+{
+  "extends": ["eslint:recommended", "react-app", "react-app/jest", "prettier"],
+  "plugins": ["simple-import-sort", "react-hooks"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
+}
+```
+
+**重要**: `eslint-plugin-import` は明示的にインストールしない
+
+- `eslint-config-react-app` が既に `eslint-plugin-import` を提供
+- 明示的にインストールすると競合エラーが発生
+- plugins 配列に `"import"` を含めない
+
+### 開発ワークフロー
+
+```bash
+yarn lint              # ESLint + Prettier チェック
+yarn format            # 自動フォーマット
+yarn test              # Jest テスト実行
+git cim "fix: message"  # Conventional Commits形式でコミット
+```
+
+### Pre-commit フック
+
+- **nano-staged**: ステージされたファイルのみリント
+- **simple-git-hooks**: Git フック管理
+- **commitlint**: Conventional Commits チェック
+
+### ESLint トラブルシューティング
+
+#### プラグイン重複エラー
+
+```
+ESLint couldn't determine the plugin "import" uniquely
+```
+
+**解決方法**:
+
+1. `yarn remove eslint-plugin-import`
+2. `.eslintrc.json` の plugins から `"import"` を削除
+3. `eslint-config-react-app` が既に提供するため不要
+
+#### プラグイン未インストールエラー
+
+```
+ESLint couldn't find the plugin "eslint-plugin-import"
+```
+
+**解決方法**: 上記の重複エラー解決方法と同じ
+
+- 明示的なインストールではなく、設定から削除が正解
+
 ## Chrome 拡張機能固有の制約
 
 ### Manifest V3 制約
