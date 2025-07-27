@@ -9,7 +9,7 @@
     "ecmaVersion": 2020,
     "ecmaFeatures": { "jsx": true }
   },
-  "plugins": ["import", "simple-import-sort", "react-hooks"],
+  "plugins": ["simple-import-sort", "react-hooks"],
   "rules": {
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": 2,

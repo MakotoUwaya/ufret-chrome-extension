@@ -1,0 +1,102 @@
+# UFret Chrome Extension - プロジェクト固有のルールと学習事項
+
+## ESLint設定の重要な注意事項
+
+### eslint-plugin-import について
+- **絶対にインストールしない**: `eslint-plugin-import`を明示的にインストールしてはいけない
+- **理由**: `eslint-config-react-app`が既に`eslint-plugin-import`を内包している
+- **競合エラー**: 明示的にインストールすると以下のエラーが発生する
+  ```
+  ESLint couldn't determine the plugin "import" uniquely
+  ```
+
+### .eslintrc.json設定
+- **plugins配列**: `"import"`を含めない
+- **正しい設定**:
+  ```json
+  {
+    "plugins": ["simple-import-sort", "react-hooks"]
+  }
+  ```
+- **間違った設定**:
+  ```json
+  {
+    "plugins": ["import", "simple-import-sort", "react-hooks"]
+  }
+  ```
+
+## 開発ワークフロー
+
+### パッケージ管理
+- **Yarn使用**: npmではなくyarnを使用する
+- **依存関係の追加**: `yarn add -D <package>`
+- **依存関係の削除**: `yarn remove <package>`
+
+### コミットメッセージ
+- **Conventional Commits形式**: 必須
+- **正しい形式**: `git cim "fix: description"`
+- **間違った形式**: `git cim "description"`（typeが無い）
+
+### Git pre-commit フック
+- **nano-staged**: ステージされたファイルのみチェック
+- **ESLint**: `eslint --fix`自動実行
+- **Prettier**: `prettier --write`自動実行
+- **commitlint**: Conventional Commits形式チェック
+
+## トラブルシューティング履歴
+
+### 2025-07-27: ESLintプラグイン競合問題
+**問題**: `git cim`コマンドでESLintエラーが発生
+```
+ESLint couldn't find the plugin "eslint-plugin-import"
+```
+
+**間違った解決方法**: `yarn add -D eslint-plugin-import`でインストール
+→ 新たな競合エラーが発生
+
+**正しい解決方法**:
+1. `yarn remove eslint-plugin-import`
+2. `.eslintrc.json`のpluginsから`"import"`を削除
+3. `eslint-config-react-app`が既に提供するため設定変更で解決
+
+**学習事項**: ESLintプラグイン不足エラーは、必ずしもインストールで解決するわけではない。設定の重複が原因の場合がある。
+
+## プロジェクト固有の制約
+
+### Chrome拡張機能開発
+- **Manifest V3**: 最新の仕様に準拠
+- **Content Security Policy**: 厳しい制約あり
+- **Host Permissions**: 最小権限の原則
+
+### React + TypeScript
+- **厳密な型チェック**: TypeScript strict mode有効
+- **Emotion**: CSS-in-JSライブラリ使用
+- **Material-UI**: UIコンポーネントライブラリ
+
+### Redux状態管理
+- **Redux Toolkit**: 現代的なRedux使用法
+- **Chrome拡張機能対応**: webext-redux使用
+- **永続化**: redux-persist-webextension-storage
+
+## コード品質基準
+
+### Import順序
+- **simple-import-sort**: import文の自動ソート
+- **グループ化**: React → 外部ライブラリ → 内部モジュール → 相対パス
+
+### テスト
+- **Jest**: テストランナー
+- **React Testing Library**: コンポーネントテスト
+- **jest-chrome**: Chrome API モック
+
+## パフォーマンス考慮事項
+
+### Bundle Size最適化
+- **Tree Shaking**: 未使用コードの除去
+- **Dynamic Import**: 必要に応じた遅延読み込み
+- **外部依存関係**: 最小限に抑制
+
+### Chrome拡張機能最適化
+- **Content Script**: 軽量化が重要
+- **Background Script**: Service Worker使用
+- **Storage API**: 非同期アクセス必須
