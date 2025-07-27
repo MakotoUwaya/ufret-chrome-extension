@@ -23,3 +23,6 @@ dist_firefox
 *.njsproj
 *.sln
 *.sw?
+
+# yarn
+.yarn
