@@ -13,6 +13,13 @@ U-Fret Chrome 拡張機能は**基本機能が実装済み**の状態です。�
 
 ## 最近の変更
 
+### 権限最適化（2025-07-27）
+
+- `src/manifest.ts` の権限設定を最適化
+- `host_permissions: ['<all_urls>']` → `host_permissions: ['https://www.ufret.jp/*']`
+- `web_accessible_resources.matches: ['<all_urls>']` → `matches: ['https://www.ufret.jp/*']`
+- セキュリティ向上: 拡張機能が必要最小限のサイトのみにアクセス
+
 ### 分析完了事項
 
 - プロジェクト構造の完全理解
@@ -24,7 +31,7 @@ U-Fret Chrome 拡張機能は**基本機能が実装済み**の状態です。�
 
 ### 短期的な改善項目
 
-1. **権限の最適化**: `host_permissions: ['<all_urls>']` → `https://www.ufret.jp/*` に限定
+1. ✅ **権限の最適化**: `host_permissions: ['<all_urls>']` → `https://www.ufret.jp/*` に限定（完了）
 2. **サンプルコード削除**: `src/content/features/counter/` の削除
 3. **UI 改善**: Content.tsx の「Content Example」表示の改善
 4. **エラーハンドリング**: DOM 要素が見つからない場合の処理強化
